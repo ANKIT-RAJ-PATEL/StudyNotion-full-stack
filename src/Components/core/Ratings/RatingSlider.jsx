@@ -5,7 +5,7 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Mousewheel, Keyboard } from "swiper";
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+//import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useEffect, useState } from "react";
 import { ratingsEndpoints } from "../../../services/apis";

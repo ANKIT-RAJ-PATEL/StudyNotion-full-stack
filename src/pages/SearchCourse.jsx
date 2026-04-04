@@ -24,7 +24,7 @@ const SearchCourse = () => {
 
     useEffect(() => {
         fetchSearchResults();
-    }, [searchQuery])
+    }, [searchQuery,fetchSearchResults])
 
 
 

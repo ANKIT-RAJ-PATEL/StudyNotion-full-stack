@@ -22,13 +22,13 @@ const VideoDetails = () => {
   const {token} = useSelector(state => state.auth);
   const {user}= useSelector(state => state.profile);
   // console.log("user",user._id);
-  const {courseSectionData, courseEntireData, completedLectures, totalNoOfLectures} = useSelector(state => state.viewCourse);
+  const {courseSectionData,  completedLectures} = useSelector(state => state.viewCourse);
   const navigate = useNavigate();
   const playerRef = React.useRef(null);
 
   const [videoData, setVideoData] = useState([]);
   const [videoEnd, setVideoEnd] = useState(false);
-  const [loading, setLoading] = useState(false);
+  //const [loading, setLoading] = useState(false);
 
   useEffect (() => {
     if (courseSectionData.length === 0) {

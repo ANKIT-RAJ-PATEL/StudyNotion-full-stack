@@ -29,7 +29,7 @@ const EditCourse = () => {
             setLoading(false);
         }
         popualteCourse();
-    },[]);
+    },[course,courseId,dispatch,token]);
 
   return (
     <div className='mx-auto w-11/12 max-w-[1000px] py-10'>

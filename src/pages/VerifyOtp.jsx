@@ -16,7 +16,7 @@ const VerifyOtp = () => {
 
         if(!signupData){
             navigate('/signup');
-        }},[])
+        }},[navigate,signupData])
 
 
 

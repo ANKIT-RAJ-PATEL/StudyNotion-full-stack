@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { setCourse, setEditCourse, setStep } from '../../../../slices/courseSlice';
+import {  setEditCourse, setStep } from '../../../../slices/courseSlice';
 import { COURSE_STATUS } from '../../../../utils/constants';
 import { addCourseToCategory, editCourseDetails } from '../../../../services/operations/courseDetailsAPI';
 import toast from 'react-hot-toast';
@@ -22,7 +22,7 @@ const PublishCourse = () => {
         if(course?.status=== COURSE_STATUS.PUBLISHED) {
             setValue("public", true);
         }
-    },[]);
+    },[course?.status,setValue]);
 
     const goBack = () => {
         dispatch(setStep(2));
