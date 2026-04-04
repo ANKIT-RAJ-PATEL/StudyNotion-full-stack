@@ -33,14 +33,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thepranaygupta/react-tailwind-css-starter-pack.git"
+    "url": "git+https://github.com/ANKIT-RAJ-PATEL/StudyNotion-full-stack/tree/main"
   },
-  "author": "Pranay Gupta",
+  "author": "Ankit Raj Patel",
   "bugs": {
-    "url": "https://github.com/thepranaygupta/react-tailwind-css-starter-pack/issues"
+    "url": "https://github.com/ANKIT-RAJ-PATEL/StudyNotion-full-stack/tree/main"
   },
   "scripts": {
-    "start": "node index.js",
+    "start": "react-scripts start",
     "build": "CI=false react-scripts build",
     "eject": "react-scripts eject",
     "server": "cd server && npm run dev",

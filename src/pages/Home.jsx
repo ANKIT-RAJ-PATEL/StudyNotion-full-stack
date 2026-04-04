@@ -33,7 +33,7 @@ function Home() {
         if (categoryID) {
             fetchCatalogPageData();
         }
-    }, [categoryID,dispatch])
+    }, [categoryID])
     const dispatch = useDispatch();
   return (
     <div>
