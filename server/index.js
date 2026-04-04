@@ -1,4 +1,5 @@
 const express = require("express");
+// const path = require("path");
 
 const app = express();
 
@@ -62,15 +63,4 @@ app.get("/", (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
-});
-
-
-import path from "path";
-
-const __dirname = path.resolve();
-
-app.use(express.static(path.join(__dirname, "../build")));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../build/index.html"));
 });
