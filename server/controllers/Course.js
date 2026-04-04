@@ -156,11 +156,6 @@ exports.getAllCourses = async (req, res) => {
 };
 
 //getCourseDetails
-
-
-
-
-
 exports.getCourseDetails = async (req,res)=>{
 	try {
 		const {courseId}=req.body;
@@ -199,8 +194,6 @@ exports.getCourseDetails = async (req,res)=>{
 
 }
 
-
-
 // Function to get all courses of a particular instructor
 exports.getInstructorCourses = async (req, res) => {
 	try {
@@ -225,10 +218,6 @@ exports.getInstructorCourses = async (req, res) => {
 		});
 	}
 }
-
-
-
-
 
 //Edit Course Details
 exports.editCourse = async (req, res) => {
@@ -298,9 +287,6 @@ exports.editCourse = async (req, res) => {
 	  })
 	}
   }
-
-
-
 
   //get full course details
   exports.getFullCourseDetails = async (req, res) => {
@@ -376,7 +362,6 @@ exports.editCourse = async (req, res) => {
 	}
   }
 
-
 //Delete Course
 exports.deleteCourse = async (req, res) => {
 	try {
@@ -437,8 +422,6 @@ exports.deleteCourse = async (req, res) => {
 	  })
 	}
   }
-
-
 
   //search course by title,description and tags array
   exports.searchCourse = async (req, res) => {
