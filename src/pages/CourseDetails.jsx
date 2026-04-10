@@ -45,7 +45,7 @@ const CourseDetails = () => {
             setCourseDetail(response);
         }
         getCourseDetails();
-    }, [courseId,dispatch]);
+    }, [courseId]);
 
     useEffect(() => {
         if(courseDetail?.ratingAndReviews?.length > 0){
@@ -60,7 +60,7 @@ const CourseDetails = () => {
     const handelAddToCart = () => {
         if(token){
         dispatch(addToCart(courseDetail));
-        // console.log("handelAddToCart -> courseId", courseDetail._id)
+
         }
         else{
             navigate('/login');
@@ -121,27 +121,34 @@ const CourseDetails = () => {
                     </div>
                     <div className='flex w-full flex-col gap-4 border-y border-y-richblack-500 py-4 lg:hidden'>
                         <p className='space-x-3 pb-4 text-3xl font-semibold text-richblack-5'>
-                            <span>₹{courseDetail?.price}</span></p>
+                            <span>₹{courseDetail?.price}</span>
+                        </p>
                             {ACCOUNT_TYPE.INSTRUCTOR !==user?.accountType &&
                             <>
                             {
-                                alreadyEnrolled ? <button onClick={()=>{navigate("/dashboard/enrolled-courses")}}  className='yellowButton'>Go to Course</button> : <button onClick={handelPayment} className='yellowButton'>Buy Now</button>
+                                alreadyEnrolled ? 
+                                <button onClick={()=>{navigate("/dashboard/enrolled-courses")}}  className='yellowButton'>
+                                    Go to Course
+                                </button> 
+                                : <button onClick={handelPayment} className='yellowButton'>Buy Now</button>
                             }
                             {
                                 alreadyEnrolled ? (<div></div>) : 
                                 (
                                     cart?.find((item) => item?._id === courseDetail?._id) ?
-                                    (<button onClick={()=>{navigate("/dashboard/cart")}} className='blackButton text-richblack-5'>Go to Cart</button>) :
-                                    (<button onClick={handelAddToCart} className='blackButton text-richblack-5'>Add to Cart</button>)
+                                    (<button onClick={()=>{navigate("/dashboard/cart")}} className='blackButton text-richblack-5'>Go to Cart</button>) 
+                                    : (<button onClick={handelAddToCart} className='blackButton text-richblack-5'>Add to Cart</button>)
                                 )
                             }
                             </>
                             }
                     </div>
                 </div>
-                <div className='right-[1rem] top-[60px] mx-auto hidden min-h-[600px] w-1/3 max-w-[410px] translate-y-24 md:translate-y-0 lg:absolute  lg:block'>
+                <div className='right-[1rem] top-[60px] mx-auto hidden min-h-[600px] w-1/3 max-w-[410px] translate-y-24 
+                    md:translate-y-0 lg:absolute lg:block'>
                     <div className='flex flex-col gap-4 rounded-md bg-richblack-700 p-4 text-richblack-5'>
-                        <img src={courseDetail?.thumbnail} alt="course img" className='max-h-[300px] min-h-[180px] w-[400px] overflow-hidden rounded-2xl object-cover md:max-w-full' />
+                        <img src={courseDetail?.thumbnail} alt="course img" className='max-h-[300px] min-h-[180px] w-[400px] overflow-hidden
+                             rounded-2xl object-cover md:max-w-full' />
                         <div className='px-4'>
                             <div className='space-x-3 pb-4 text-3xl font-semibold'>
                                 <span>₹{courseDetail?.price}</span>
@@ -150,14 +157,20 @@ const CourseDetails = () => {
                                 {ACCOUNT_TYPE.INSTRUCTOR !==user?.accountType &&
                                 <>
                                 {
-                                    alreadyEnrolled ? <button onClick={()=>{navigate("/dashboard/enrolled-courses")}} className='yellowButton'>Go to Course</button> : <button onClick={handelPayment} className='yellowButton'>Buy Now</button>
+                                    alreadyEnrolled ? 
+                                    <button onClick={()=>{navigate("/dashboard/enrolled-courses")}} className='yellowButton'>
+                                        Go to Course
+                                    </button> 
+                                    : <button onClick={handelPayment} className='yellowButton'>
+                                        Buy Now
+                                    </button>
                                 }
                                 {
                                 alreadyEnrolled ? (<div></div>) : 
                                 (
                                     cart?.find((item) => item._id === courseDetail._id) ?
-                                    (<button onClick={()=>{navigate("/dashboard/cart")}} className='blackButton text-richblack-5'>Go to Cart</button>) :
-                                    (<button onClick={handelAddToCart} className='blackButton text-richblack-5'>Add to Cart</button>)
+                                    (<button onClick={()=>{navigate("/dashboard/cart")}} className='blackButton text-richblack-5'>Go to Cart</button>) 
+                                    :(<button onClick={handelAddToCart} className='blackButton text-richblack-5'>Add to Cart</button>)
                                 )
                             }
                                 </>
@@ -223,7 +236,8 @@ const CourseDetails = () => {
                         <div className='py-4'>
                             {
                                 courseDetail?.courseContent?.map((item, index) => (
-                                    <details key={index} className=' border border-solid border-richblack-600 bg-richblack-700 text-richblack-5 detailanimatation'>
+                                    <details key={index} className=' border border-solid border-richblack-600 bg-richblack-700
+                                         text-richblack-5 detailanimatation'>
                                         <summary className='flex cursor-pointer items-start justify-between bg-opacity-20 px-7  py-5 transition-[0.3s]'>
                                             <div className='flex items-center gap-2'>
                                             <FaChevronDown className='arrow '/>
@@ -236,7 +250,8 @@ const CourseDetails = () => {
                                         <div className='mt-5'>
                                             {
                                                 item?.subSection?.map((subItem, subIndex) => (
-                                                    <div key={subIndex} className='relative overflow-hidden bg-richblack-900  p-5 border border-solid border-richblack-600'>
+                                                    <div key={subIndex} className='relative overflow-hidden bg-richblack-900  p-5 border   
+                                                        border-solid border-richblack-600'>
                                                         <div className='flex items-center gap-2'>
                                                         <IoVideocamOutline className='txt-lg text-richblack-5'/>
                                                         <span className='text-lg'>{subItem?.title}</span>
@@ -261,7 +276,7 @@ const CourseDetails = () => {
                     <img src={courseDetail?.instructor.image} alt="author img" className='w-[50px] h-[50px] rounded-full object-cover'/>
                     <p className='text-xl font-semibold'>{courseDetail?.instructor?.firstName} {courseDetail?.instructor?.lastName}</p>
                 </div>
-                <p className='text-richblack-50 text-sm mb-10'>{courseDetail?.instructor?.additionalDetails?.about}</p>
+                <p className=' text-sm mb-10'>{courseDetail?.instructor?.additionalDetails?.about}</p>
             </div>
 
             {/* Reviews */}

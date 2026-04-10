@@ -45,8 +45,11 @@ exports.showAllCategories = async (req, res) => {
 };
 
 exports.categoryPageDetails = async (req, res) => {
+	
 	try {
+		console.log("Try ke andr aa gaye hain jiii");
 		const { categoryId } = req.body;
+		console.log("lijiye category id", categoryId);
 
 		// Get courses for the specified category
 		const selectedCategory = await Category.findById(categoryId)          //populate instuctor and rating and reviews from courses
@@ -55,7 +58,7 @@ exports.categoryPageDetails = async (req, res) => {
 		// console.log(selectedCategory);
 		// Handle the case when the category is not found
 		if (!selectedCategory) {
-			console.log("Category not found.");
+			console.log("Category not found.",selectedCategory);
 			return res
 				.status(404)
 				.json({ success: false, message: "Category not found" });
@@ -86,6 +89,9 @@ exports.categoryPageDetails = async (req, res) => {
 		const mostSellingCourses = allCourses
 			.sort((a, b) => b.sold - a.sold)
 			.slice(0, 10);
+			console.log("dekhiye category", allCategories);
+			console.log("dekhiye course", allCourses);
+			console.log("Response me jaane wale hain jiii wait kriye");
 
 		res.status(200).json({
 			selectedCourses: selectedCourses,
@@ -93,6 +99,7 @@ exports.categoryPageDetails = async (req, res) => {
 			mostSellingCourses: mostSellingCourses,
 			success: true,
 		});
+		console.log("response dekh lijiye jiiiiiiii");
 	} catch (error) {
 		return res.status(500).json({
 			success: false,

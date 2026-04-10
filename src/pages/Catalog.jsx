@@ -34,12 +34,13 @@ const Catalog = () => {
 }
 useEffect(() => {
     fetchSublinks();
-}, [Catalog,fetchSublinks])
+}, [Catalog])
 
 useEffect(() => {
     const fetchCatalogPageData = async () => {
         
             const result = await getCatalogaPageData(categoryID,dispatch);
+            
             setCatalogPageData(result);
             // console.log("page data",CatalogPageData);
         
@@ -47,7 +48,7 @@ useEffect(() => {
     if (categoryID) {
         fetchCatalogPageData();
     }
-}, [categoryID,dispatch])
+}, [categoryID])
 
 
   return (

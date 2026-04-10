@@ -273,10 +273,7 @@ export const fetchInstructorCourses = async (token) => {
   let result = [];
   const toastId = toast.loading("Loading...");
   try {
-    const response = await apiConnector(
-      "GET",
-      GET_ALL_INSTRUCTOR_COURSES_API,
-      null,
+    const response = await apiConnector("GET",GET_ALL_INSTRUCTOR_COURSES_API,null,
       {
         Authorisation: `Bearer ${token}`,
       }
@@ -319,9 +316,7 @@ export const getFullDetailsOfCourse = async (courseId, token) => {
   //   dispatch(setLoading(true));
   let result = null;
   try {
-    const response = await apiConnector(
-      "POST",
-      GET_FULL_COURSE_DETAILS_AUTHENTICATED,
+    const response = await apiConnector("POST",GET_FULL_COURSE_DETAILS_AUTHENTICATED,
       {
         courseId,
       },
@@ -401,10 +396,7 @@ export const addCourseToCategory = async (data, token) => {
   const toastId = toast.loading("Loading...");
   let success = false;
   try {
-    const response = await apiConnector(
-      "POST",
-      ADD_COURSE_TO_CATEGORY_API,
-      data,
+    const response = await apiConnector("POST",ADD_COURSE_TO_CATEGORY_API,data,
       {
         Authorisation: `Bearer ${token}`,
       }

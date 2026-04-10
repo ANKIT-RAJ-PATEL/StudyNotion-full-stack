@@ -61,8 +61,6 @@ const NavBar = ({ setProgress }) => {
         overlay.current.classList.toggle('hidden');
     }
 
-
-
     //handeling navbar scroll
     const handleScroll = () => {
         const currentScrollPos = window.scrollY
@@ -80,7 +78,7 @@ const NavBar = ({ setProgress }) => {
         window.addEventListener('scroll', handleScroll);
 
         return () => window.removeEventListener('scroll', handleScroll)
-    })
+    },[])
 
     const handelSearch = (e) => {
         e.preventDefault();

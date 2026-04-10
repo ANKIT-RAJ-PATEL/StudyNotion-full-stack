@@ -14,10 +14,7 @@ export async function getUserCourses(token,dispatch){
     let result = []
     try {
       console.log("BEFORE Calling BACKEND API FOR ENROLLED COURSES");
-      const response = await apiConnector(
-        "GET",
-        profileEndpoints.GET_USER_ENROLLED_COURSES_API,
-        null,
+      const response = await apiConnector("GET",profileEndpoints.GET_USER_ENROLLED_COURSES_API,null,
         {
           Authorisation: `Bearer ${token}`,
         }
@@ -67,10 +64,6 @@ export async function updatePfp(token,pfp){
   toast.dismiss(toastId);
 }
 
-
-
-
-
 //updateAdditionalDetails
 export async function updateAdditionalDetails(token,additionalDetails){
   console.log("additionalDetails",additionalDetails);
@@ -102,11 +95,6 @@ export async function updateAdditionalDetails(token,additionalDetails){
   toast.dismiss(toastId);
 }
 
-
-
-
-
-
 //updatePassword
 export async function updatePassword(token,password){
   const { oldPassword, newPassword, confirmPassword:confirmNewPassword }=password;
@@ -128,8 +116,6 @@ export async function updatePassword(token,password){
   }
   toast.dismiss(toastId);
 }
-
-
 
 //deleteAccount
 export async function deleteAccount(token,dispatch,navigate){

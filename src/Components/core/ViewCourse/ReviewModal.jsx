@@ -46,7 +46,8 @@ const ReviewModal = ({setReviewModal}) => {
 
   return (
     <div>
-      <div className=' z-50 my-10 w-11/12 max-w-[700px] rounded-lg border border-richblack-400 bg-richblack-800 fixed left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2'>
+      <div className=' z-50 my-10 w-11/12 max-w-[700px] rounded-lg border border-richblack-400 bg-richblack-800 fixed left-[50%] top-[50%] 
+        -translate-x-1/2 -translate-y-1/2'>
         <div className='flex items-center justify-between rounded-t-lg bg-richblack-700 p-5'>
           <p className='text-xl font-semibold text-richblack-5'>Add Review</p>
           <button>

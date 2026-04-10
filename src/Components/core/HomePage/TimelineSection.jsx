@@ -14,18 +14,18 @@ const timeline = [
     },
     {
         Logo: Logo2,
-        heading: "Leadership",
-        Description:"Fully committed to the success company",
+        heading: "Leadershipscdgf",
+        Description:"Fully committed to the success ",
     },
     {
         Logo: Logo3,
-        heading: "Leadership",
-        Description:"Fully committed to the success company",
+        heading: "Leadershiphvv",
+        Description:"Fully committed to the ",
     },
     {
         Logo: Logo4,
-        heading: "Leadership",
-        Description:"Fully committed to the success company",
+        heading: "Leadershiphfgd",
+        Description:"Fully committed to the success company yesssseyy",
     },
 ];
 

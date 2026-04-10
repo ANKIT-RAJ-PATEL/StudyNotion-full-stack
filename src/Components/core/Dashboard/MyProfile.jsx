@@ -67,34 +67,34 @@ const MyProfile = () => {
             </div>
             <div className='flex gap-y-5 md:flex-row flex-col max-w-[500px] justify-between'>
                 <div className='flex flex-col gap-y-5'>
-                <div>
-                    <p className='mb-2 text-sm text-richblack-100'>First Name</p>
-                    <p className='text-sm font-medium text-richblack-5'>{user?.firstName}</p>
-                </div>
-                <div>
-                    <p className='mb-2 text-sm text-richblack-100'>Email</p>
-                    <p className='text-sm font-medium text-richblack-5 break-words'>{user?.email}</p>
-                </div>
-                <div>
-                    <p className='mb-2 text-sm text-richblack-100'>Gender</p>
-                    <p className='text-sm font-medium text-richblack-5'>{user?.additionalDetails?.gender ?? "Add Gender"}</p>
-                </div>
+                    <div>
+                        <p className='mb-2 text-sm text-richblack-100'>First Name</p>
+                        <p className='text-sm font-medium text-richblack-5'>{user?.firstName}</p>
+                    </div>
+                    <div>
+                        <p className='mb-2 text-sm text-richblack-100'>Email</p>
+                        <p className='text-sm font-medium text-richblack-5 break-words'>{user?.email}</p>
+                    </div>
+                    <div>
+                        <p className='mb-2 text-sm text-richblack-100'>Gender</p>
+                        <p className='text-sm font-medium text-richblack-5'>{user?.additionalDetails?.gender ?? "Add Gender"}</p>
+                    </div>
                 </div>
 
 
                 <div className='flex flex-col gap-y-5'>
-                <div>
-                    <p className='mb-2 text-sm text-richblack-100'>Last Name</p>
-                    <p className='text-sm font-medium text-richblack-5'>{user?.lastName}</p>
-                </div>
-                <div>
-                    <p className='mb-2 text-sm text-richblack-100'>Phone Number</p>
-                    <p className='text-sm font-medium text-richblack-5'>{user?.additionalDetails?.contactNumber ?? "Add Contact Number"}</p>
-                </div>
-                <div>
-                    <p className='mb-2 text-sm text-richblack-100'>Date of Birth</p>
-                    <p className='text-sm font-medium text-richblack-5'>{user?.additionalDetails?.dateOfBirth ?? "Add Date of Birth"}</p>
-                </div>
+                    <div>
+                        <p className='mb-2 text-sm text-richblack-100'>Last Name</p>
+                        <p className='text-sm font-medium text-richblack-5'>{user?.lastName}</p>
+                    </div>
+                    <div>
+                        <p className='mb-2 text-sm text-richblack-100'>Phone Number</p>
+                        <p className='text-sm font-medium text-richblack-5'>{user?.additionalDetails?.contactNumber ?? "Add Contact Number"}</p>
+                    </div>
+                    <div>
+                        <p className='mb-2 text-sm text-richblack-100'>Date of Birth</p>
+                        <p className='text-sm font-medium text-richblack-5'>{user?.additionalDetails?.dateOfBirth ? user?.additionalDetails?.dateOfBirth: "Add Date of Birth"}</p>
+                    </div>
             </div>
         </div>
 

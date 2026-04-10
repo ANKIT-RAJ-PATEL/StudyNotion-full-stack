@@ -25,7 +25,8 @@ exports.resetPasswordToken = async (req, res) => {
 		);
 		console.log("DETAILS", updatedDetails);
 
-		const url = `https://studynotion.fun/update-password/${token}`;
+		// const url = `https://studynotion.fun/update-password/${token}`;
+		const url = `http://localhost:3000/update-password/${token}`;
 
 		await mailSender(
 			email,

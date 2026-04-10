@@ -34,9 +34,19 @@ const EnrolledCourses = () => {
         return total;
     }
 
+    const totalDurations = (course) => {
+        let totalDur = 0;
+        course.courseContent.forEach((section) => {
+            section.subSection.forEach((subSection) => {
+                totalDur += Number(subSection.timeDuration) || 0;
+            })
+        });
+        return totalDur;
+    }
+
     useEffect(()=> {
         getEnrolledCourses();
-    },[getEnrolledCourses]);
+    },[]);
 
     if(Loading) {
         return (
@@ -80,8 +90,11 @@ const EnrolledCourses = () => {
                                     </div>
                                 </div>
 
-                                <div className='w-1/4 px-2 py-3'>
-                                    {course?.totalDuration}
+                                <div className='w-1/4 px-2 py-3 text-yellow-50'>
+                                    {/* {course?.courseContent[0]?.subSection[0]?.timeDuration}
+                                    <p>dur</p> */}
+                                    <p>{totalDurations(course)}</p>
+                                    <p>durrree</p>
                                 </div>
 
                                 <div className='flex w-1/5 flex-col gap-2 px- py-3'>

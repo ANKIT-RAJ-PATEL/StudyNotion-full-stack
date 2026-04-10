@@ -147,7 +147,8 @@ const VideoDetails = () => {
                   <div className='flex justify-center items-center'>
                     {
                       !completedLectures.includes(videoData._id) && (
-                        <button onClick={()=>{handleLectureCompletion()}} className='bg-yellow-100 text-richblack-900 absolute top-[20%] hover:scale-90 z-20 font-medium md:text-sm px-4 py-2 rounded-md'>Mark as Completed</button>
+                        <button onClick={()=>{handleLectureCompletion()}} className='bg-yellow-100 text-richblack-900 absolute top-[20%] 
+                        hover:scale-90 z-20 font-medium md:text-sm px-4 py-2 rounded-md'>Mark as Completed</button>
                       )
                     }
                   </div>
@@ -169,7 +170,11 @@ const VideoDetails = () => {
                     )
                   }
                   {
-                    <MdOutlineReplayCircleFilled onClick={() =>{ playerRef.current.seek(0);playerRef.current.play();setVideoEnd(false)}} className="text-2xl md:text-5xl bg-richblack-600 rounded-full cursor-pointer hover:scale-90 absolute top-1/2 z-20"/>
+                    <MdOutlineReplayCircleFilled onClick={() =>{ 
+                      playerRef.current.seek(0);
+                      playerRef.current.play();
+                      setVideoEnd(false)}} 
+                      className="text-2xl md:text-5xl bg-richblack-600 rounded-full cursor-pointer hover:scale-90 absolute top-1/2 z-20"/>
                   }
                   </div>
                 )

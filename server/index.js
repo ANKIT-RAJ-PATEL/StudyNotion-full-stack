@@ -24,9 +24,10 @@ database.connect();
 app.use(express.json());
 app.use(cookieParser());
 
-const whitelist = process.env.CORS_ORIGIN
-  ? JSON.parse(process.env.CORS_ORIGIN)
-  : ["*"];
+const whitelist = "http://localhost:3000"
+// process.env.CORS_ORIGIN
+//   ? JSON.parse(process.env.CORS_ORIGIN)
+//   : ["*"];
 
 app.use(
   cors({

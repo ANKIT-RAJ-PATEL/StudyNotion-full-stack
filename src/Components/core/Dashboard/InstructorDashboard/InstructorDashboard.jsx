@@ -28,7 +28,7 @@ const InstructorDashboard = () => {
             console.log("courses",instructorCourses);
             setDetails(instructorDetails);
         })();
-    }, [token,dispatch])
+    }, [])
 
     const totalEarnings = details?.reduce((acc, course) => {
         return acc + course?.totalRevenue;
@@ -52,8 +52,14 @@ const InstructorDashboard = () => {
                         Visualize
                         </p>
                         <div className='flex items-center space-x-4'>
-                        <button onClick={() => setCurrentChart('revenue')} className={`px-2 py-2 rounded-md ${currentChart === 'revenue' ? 'bg-richblack-900 text-yellow-100' : 'bg-richblack-800 text-richblack-100'}`}>Revenue</button>
-                        <button onClick={() => setCurrentChart('students')} className={`px-2 py-2 rounded-md ${currentChart === 'students' ? 'bg-richblack-900 text-yellow-100' : 'bg-richblack-800 text-richblack-100'}`}>Students</button>
+                        <button onClick={() => setCurrentChart('revenue')} className={`px-2 py-2 rounded-md
+                             ${currentChart === 'revenue' ? 'bg-richblack-900 text-yellow-100' : 'bg-richblack-800 text-richblack-100'}`}>
+                                Revenue
+                        </button>
+                        <button onClick={() => setCurrentChart('students')} className={`px-2 py-2 rounded-md 
+                            ${currentChart === 'students' ? 'bg-richblack-900 text-yellow-100' : 'bg-richblack-800 text-richblack-100'}`}>
+                                Students
+                        </button>
             </div>
                         </div>
                         <DashboardChart details={details} currentChart={currentChart}/>

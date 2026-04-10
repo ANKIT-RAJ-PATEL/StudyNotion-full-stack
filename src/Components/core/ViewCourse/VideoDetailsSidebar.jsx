@@ -42,7 +42,7 @@ const VideoDetailsSidebar = ({setReviewModal}) => {
   return (
     <>
      <div className={`${showSidebar?"":"hidden"} w-6 h-72 md:hidden relative `}>
-      <FaAngleDoubleRight onClick={()=>{setShowSidebar(!showSidebar);}} className={` md:hidden z-10 cursor-pointer text-2xl text-richblack-900 m-2 bg-richblack-100 rounded-full p-1 top-3 absolute -left-1 `} />
+      <FaAngleDoubleRight onClick={()=>{setShowSidebar(!showSidebar)}} className={` md:hidden z-10 cursor-pointer text-2xl text-richblack-900 m-2 bg-richblack-100 rounded-full p-1 top-3 absolute -left-1 `} />
       </div>
     <div className={ `${showSidebar?"h-0 w-0":"h-[calc(100vh-3.5rem)] w-[320px]"} transition-all duration-700 z-20 relative offSidebar1`}>
       <div className={`${showSidebar?"hidden":""} transition-all origin-right duration-500 flex h-[calc(100vh-3.5rem)] w-[320px] max-w-[350px] flex-col border-r-[1px] border-r-richblack-700 bg-richblack-800 offSidebar2`}>
@@ -81,7 +81,8 @@ const VideoDetailsSidebar = ({setReviewModal}) => {
                       <div onClick={()=>{
                         setShowSidebar(true);
                         navigate(`/dashboard/enrolled-courses/view-course/${courseId}/section/${section?._id}/sub-section/${subSection?._id}`);
-                      }} className={`${subSection?._id === videoActive? ("bg-yellow-200"):("bg-richblack-50") } cursor-pointer items-baseline  flex gap-3  px-5 py-2 font-semibold text-richblack-800 relative border-b-[1px] border-richblack-600 `}>
+                      }} className={`${subSection?._id === videoActive? ("bg-yellow-200"):("bg-richblack-50") } cursor-pointer items-baseline  
+                      flex gap-3  px-5 py-2 font-semibold text-richblack-800 relative border-b-[1px] border-richblack-600 `}>
                       {/* <input type='checkbox' className=' '/> */}
                       <div className="checkbox-wrapper-19 absolute bottom-1">
                         <input readOnly={true} checked={
