@@ -45,12 +45,12 @@ This project is intended as a learning tool and can be used as a sample project 
 
 1. Clone the repository to your local machine.
     ```sh
-    git clone https://github.com/himanshu8443/Study-Notion-master.git
+    (https://github.com/ANKIT-RAJ-PATEL/StudyNotion-full-stack.git)
     ```
 
 2. Install the required packages.
     ```sh
-    cd Study-Notion-master
+    cd StudyNotion-full-stack
     npm install
     
     cd server
