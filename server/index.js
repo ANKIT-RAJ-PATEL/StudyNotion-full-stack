@@ -29,9 +29,16 @@ const whitelist = "http://localhost:3000"
 //   ? JSON.parse(process.env.CORS_ORIGIN)
 //   : ["*"];
 
+// app.use(
+//   cors({
+//     origin: whitelist,
+//     credentials: true,
+//     maxAge: 14400,
+//   })
+// );
 app.use(
   cors({
-    origin: whitelist,
+    origin: "https://studynotion-full-stack-frontend.onrender.com",
     credentials: true,
     maxAge: 14400,
   })
