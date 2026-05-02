@@ -38,7 +38,7 @@ app.use(cookieParser());
 // );
 app.use(
   cors({
-    origin: "https://studynotion-full-stack-frontend.onrender.com",
+    origin: ["https://studynotion-full-stack-frontend.onrender.com","https://localhost:3000"],
     credentials: true,
     maxAge: 14400,
   })
